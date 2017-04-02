@@ -1,0 +1,77 @@
+Homework 3
+----------
+
+Make sure that you run the test cases and your modules
+can be properly loaded.  It is extremly difficult and time consuming 
+for the teaching assistants to debug your code and
+try to fix it so that it runs.  
+
+It is the third homework so we expect that 
+by now everybody is familiar enough with Haskell to avoid 
+such unnecessary problems.  
+
+Both problems are worth 10 points.
+
+Problem 1:
+----------
+
+Using SearchTree.hs, implement the following functions:
+
+a) successor :: Ord a => a -> Tree a -> Maybe a
+
+The successor of v in a tree t is the smallest value in t
+larger than v.
+
+b) closest :: Int -> Tree Int -> Int
+
+The closest value to v in a numerical tree t is a value
+which has the smallest difference from v. You can assume that
+closest is always called on a non-Nil tree, so always returns 
+an answer.
+ 
+Make your solutions as efficient as possible. For instance,
+it is not ok to flatten the tree into a list and to iterate through
+it to find the answer. You have to leverage the properties of 
+binary search trees.  We will check to see how efficient your code is.
+
+You can check your solutions by loading SearchTreeTesting and 
+invoking the methods checkSuccessor and checkClosest on arbitrary lists.
+
+You can also check your solutions by loading RandomSearchTreeTesting and
+invoking the method main.
+
+You have to write your own code for both methods. 
+
+Include your solutions in the file SearchTree.hs and upload this file
+to webcourses.
+ 
+Problem 2
+---------
+
+Using Set.hs, implement the following functions:
+
+a) diff :: (Ord a) => Set a -> Set a -> Set a
+
+which gives the difference of two sets
+
+b) symDiff :: (Ord a) => Set a -> Set a -> Set a
+
+which gives the symmetric of two sets (this consists of the elements
+which lie in one of the set but not the other)
+
+c) powerSet :: (Ord a) => Set a -> Set (Set a)
+
+which returns the set of all subsets. 
+
+Can you give a definition which uses only the operations of 
+the abstract data type and not the concrete implementation based 
+on lists?
+
+You are not allowed to load Data.Set! You have to write your own
+code for the above methods.
+
+You can check your solutions for diff and symDiff by loading
+SetTesting and invoking the method main.
+
+Include your solutions in the file Set.hs and upload this file
+to webcourses.
