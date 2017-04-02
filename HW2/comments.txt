@@ -1,0 +1,31 @@
+number
+01 wrong
+0  OK       <= this is tested now (was missing in previous version of test cases)
+
+fractional 
+012.3 wrong
+0.0   OK    
+0.1   OK    <= this is tested now (was missing in previous version of test cases)
+1.0   OK  
+1.10  wrong 
+
+=============================================================================
+
+You might find it useful to define a function
+
+  range :: Char -> Char -> RegExp
+
+so that, for example, range 'A' 'Z' would match any capital letter.
+
+To implement range, consider the following hints:
+
+  char 'A' ||| char 'B' ||| char 'C'
+
+  foldr1 assumes that the list is non-empty
+
+  foldr1 (|||) [char 'A', char 'B', char 'C']
+
+  How can you get a list that contains char c, where c runs over all the uppercase letters?
+  Maybe use map or a list comprehension? 
+
+
