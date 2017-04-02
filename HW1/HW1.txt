@@ -1,0 +1,65 @@
+Homework 1 
+----------
+
+Both problems are worth 10 points.
+
+
+Problem 1:
+----------
+
+Implement the function 
+
+  computePolygonArea :: [(Double,Double)] -> Double
+
+that computes the area of the polygon.  The formula
+for the area of the polygon is given at:
+
+http://mathworld.wolfram.com/PolygonArea.html
+
+You should report an error when the list is empty or contains
+only one point.
+
+You should implement the function
+
+  det :: (Double,Double) -> (Double,Double) -> Double
+
+that computes the determinate of the 2 x 2 matrix whose
+columns are given by the first and second arguments, respectively.
+
+You should use the det function in your computation of the
+polygon area.
+
+Problem 2:
+----------
+
+See https://en.wikipedia.org/wiki/Chess for more details
+Recall we only consider the situation where there is only a single
+piece on the board
+
+Given the definitions
+
+---------------------------------------------------------------
+type File     = Char         -- column index
+                             -- valid files are 'a','b',...,'h'
+type Rank     = Int          -- row index
+                             -- valid ranks are 1,2,...8
+type Position = (File,Rank)   
+
+data Color =
+  Black | White
+  deriving (Eq,Show)
+
+data Piece =
+  King | Queen | Rook | Bishop | Knight | Pawn
+  deriving (Eq,Show)
+---------------------------------------------------------------
+
+implement the functions
+
+---------------------------------------------------------------
+isLegalPosition :: Position -> Bool
+isLegalMove :: Color -> Piece -> Position -> Position -> Bool
+---------------------------------------------------------------
+
+that check whether a position is a legal board position and whether a
+move is legal.
