@@ -1,0 +1,52 @@
+Homework 4
+----------
+
+The goal of this homework is to better understand the state monad.
+
+https://hackage.haskell.org/package/mtl-2.2.1/docs/Control-Monad-State-Lazy.html
+
+The goal is to solve the same problem with and without using 
+the state monad.  
+
+You are given an arbitrary tree (Tree a) and you have to transform it 
+into a tree of integers (Tree Int) in which the original values stored
+in the nodes are replaced by integers, starting from 0.  The same value has to be
+replaced by the same number at every occurrence.
+
+For instance,
+
+getLabeledTree Nil ~~> Nil
+
+
+getLabeledTree (Node "Haskell" Nil Nil) ~~> Node 0 Nil Nil
+
+
+getLabeledTree (Node "Haskell" (Node "is" Nil Nil) (Node "fun" Nil Nil)) ~~>
+
+Node 0 (Node 1 Nil Nil) (Node 2 Nil Nil)
+
+
+getLabeledTree (Node 'a' (Node 'a' Nil Nil) (Node 'b' (Node 'a' Nil Nil) (Node 'd' Nil Nil))) ~~>
+
+Node 0 (Node 0 Nil Nil) (Node 1 (Node 0 Nil Nil) (Node 2 Nil Nil))
+
+To solve this problem, it is helpful to use the functions get and put.
+
+
+Problem 1:
+----------
+
+Implement the function
+
+  labelValue :: Ord a => a -> (Store a Int) -> (Int, Store a Int)
+
+in TreeLabelWithoutStateMonad.hs
+
+Problem 2:
+----------
+
+Implement the function
+
+  labelValue :: Ord a => Tree a -> State (Store a Int) (Tree Int)
+
+in TreeLabelWithStateMonad.hs
